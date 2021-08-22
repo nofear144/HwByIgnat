@@ -1,0 +1,28 @@
+.menu {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.preJun {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+.jun {
+    text-decoration: none;
+    color: darkorchid;
+}
+
+.junPlus {
+    text-decoration: none;
+    color: darkmagenta;
+}
+
+.button {
+    background-color: darkcyan;
+    width:30px;
+    height:30px;
+    border: 2px solid cornflowerblue;
+    border-radius: 4px;
+}
