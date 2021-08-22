@@ -1,0 +1,114 @@
+
+.dialog {
+
+    display: grid;
+    grid-template-areas:
+            "n -"
+            "m t";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    grid-gap: 10px;
+    position: relative;
+    padding: 15px;
+    margin: 50px 0 3em;
+    text-align: center;
+    color: #fff;
+    background: #333;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.dialog::after {
+    content: '';
+    position: absolute;
+    border: 20px solid transparent;
+    border-right: 30px solid #333;
+    margin-right: 10px;
+    left:-50px;
+    top:60px;
+}
+
+/*
+.dialog:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 100px;
+    height: 30px;
+    margin: 0 0 0 -50px;
+    background: #333;
+}
+
+.dialog:after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 50%;
+    height: 30px;
+    background: #fff;
+    !* css3 *!
+    -webkit-border-bottom-right-radius: 25px;
+    -moz-border-radius-bottomright: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.dialog > :first-child:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 50%;
+    height: 30px;
+    background: #fff;
+    -webkit-border-bottom-left-radius: 25px;
+    -moz-border-radius-bottomleft: 25px;
+    border-bottom-left-radius: 25px;
+}
+*/
+
+
+.message {
+    color: coral;
+    grid-area: m;
+}
+
+.name {
+    text: solid;
+    color: blueviolet;
+    grid-area: n;
+}
+
+.time {
+    text-align: right;
+    grid-area: t;
+    align-self: end;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns:200px 500px;
+    grid-gap: 50px;
+
+}
+
+.grid img {
+    width: 200px;
+    height: 200px;
+    border-radius: 90px;
+}
+
+
+/*.grid * {
+    padding: 10px 15px;
+    background-color: aquamarine;
+    border: 1px solid rgb(24, 84, 133);
+    text-align: center;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: #fff;
+
+}*/
+
