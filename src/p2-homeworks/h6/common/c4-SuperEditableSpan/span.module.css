@@ -1,0 +1,14 @@
+.span{
+    display: inline-block;
+
+}
+.inputStyle{
+
+}
+.buttonStyle{
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 2px;
+    background-color: cornflowerblue;
+
+}

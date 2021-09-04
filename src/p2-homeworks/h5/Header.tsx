@@ -24,6 +24,7 @@ export function Header() {
 
                 {/*}*/}
                 <button
+
                     className={s.button}
                     //onClick={toogleMenu}
                     // onMouseEnter={toogleOpen}

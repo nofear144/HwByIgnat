@@ -10,7 +10,8 @@
 
 
 }
-.menu:hover{
+
+.menu:hover {
     transition-duration: 350ms;
     transform: translate(0);
 }

@@ -1,10 +1,11 @@
-import React, {ChangeEvent, InputHTMLAttributes, DetailedHTMLProps} from 'react'
+import React, {ChangeEvent, InputHTMLAttributes, DetailedHTMLProps, useState} from 'react'
+import {Checkbox} from "@material-ui/core";
 
 type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 type SuperRadioPropsType = DefaultRadioPropsType & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
+    options?: string[]
+    onChangeOption?: (option: string) => void
 }
 
 const SuperRadio: React.FC<SuperRadioPropsType> = (
@@ -15,16 +16,25 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
         ...restProps
     }
 ) => {
+
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+
+        if (onChangeOption) {
+            onChangeOption(e.currentTarget.value)
+        }
+        onChange && onChange(e)
         // onChange, onChangeOption
     }
 
 
-    const mappedOptions: any[] = options ? options.map((o, i) => ( // map options with key
+    const mappedOptions: JSX.Element[] = options ? options.map((o, i) => (// map options with key
         <label key={name + '-' + i}>
-            <input
-                type={'radio'}
-                // name, checked, value, onChange
+
+            <Checkbox
+                checked={o===value}
+                onChange={onChangeCallback}
+                inputProps={{ 'aria-label': 'primary checkbox' }}
+                value={o}
             />
             {o}
         </label>
