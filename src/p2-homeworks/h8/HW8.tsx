@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 import {homeWorkReducer} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import s from "../h9/someFlex.module.css"
 
 export type UserType = {
     _id: number
     name: string
     age: number
 }
-export type AcTypes={
- type:"sort"|"check"|"sortDown"
+export type AcTypes = {
+    type: "sort" | "check" | "sortDown"
 }
 
 const initialPeople = [
@@ -42,11 +43,11 @@ function HW8() {
 
 
             {finalPeople}
-
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div><SuperButton onClick={sortDown}>sort down</SuperButton></div>
-            <div><SuperButton onClick={check}>18+</SuperButton></div>
-
+            <div className={s.buttonBoxEight}>
+                <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
+                <div><SuperButton onClick={sortDown}>sort down</SuperButton></div>
+                <div><SuperButton onClick={check}>18+</SuperButton></div>
+            </div>
 
         </div>
     )

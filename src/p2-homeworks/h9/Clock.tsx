@@ -1,31 +1,33 @@
-import React, {useState} from 'react'
+import moment from 'moment'
+import React, {MouseEventHandler, useState} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import s from "./someFlex.module.css"
 
 function Clock() {
     const [timerId, setTimerId] = useState<number>(0)
-    const [date, setDate] = useState<Date>()
+    const [date, setDate] = useState<string>()
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
-        // stop
+        clearInterval(timerId)
     }
     const start = () => {
         stop()
-        const id: number = window.setInterval(() => {
-            // setDate
+        const id: number = +setInterval(() => {
+           setDate(moment().format('LTS'))
         }, 1000)
         setTimerId(id)
     }
 
     const onMouseEnter = () => {
-        // show
+        setShow(true)
     }
     const onMouseLeave = () => {
-        // close
+      setShow(false)
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
+    const stringTime = moment().format('LTS'); // fix with date
+    const stringDate = moment().format('ll') ;// fix with date
 
     return (
         <div>
@@ -33,7 +35,7 @@ function Clock() {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
-                {stringTime}
+                {date}
             </div>
 
             {show && (
@@ -41,10 +43,10 @@ function Clock() {
                     {stringDate}
                 </div>
             )}
-
+          <div className={s.buttonBoxNine}>
             <SuperButton onClick={start}>start</SuperButton>
             <SuperButton onClick={stop}>stop</SuperButton>
-
+          </div>
         </div>
     )
 }
