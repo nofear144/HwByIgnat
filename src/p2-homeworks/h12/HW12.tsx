@@ -16,8 +16,7 @@ function HW12() {
     const onChangeCallback = (theme:string) => {
       dispatch(changeThemeC(theme))
     }
-    // useSelector
-    // useDispatch, onChangeCallback
+  
 
     return (
         <div className={s[themeState]}>
