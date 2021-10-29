@@ -18,7 +18,7 @@ export function Request() {
     }
 
 
-    const sendRequests = () => {
+    const sendRequest = () => {
         requstsApi.postRequests(check)
             .then(async res => {
                 await setResult(JSON.stringify(
@@ -27,28 +27,24 @@ export function Request() {
                 setError("")
             })
             .catch(async rej => {
-                await setError(JSON.stringify(rej.response.data.errorText))
-                setResult("")
-            }
+                    await setError(JSON.stringify(rej.response.data.errorText))
+                    setResult("")
+                }
             )
 
     }
 
     return (
         <div>
-
             <div>
                 <input
                     type={'checkbox'}
                     onChange={onChangeValue}
                 />
             </div>
-            <SuperButton onClick={sendRequests}>Send</SuperButton>
+            <SuperButton onClick={sendRequest}>Send</SuperButton>
             {result && <div className={s.green}>{result}</div>}
             {error && <div className={s.red}>{error}</div>}
-
-
-
         </div>
     )
 
